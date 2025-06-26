@@ -41,6 +41,8 @@ app.add_middleware(
 )
 
 # ----------------- Models -----------------
+
+
 class UserCreate(BaseModel):
     username: str = Field(
         ...,
@@ -99,6 +101,7 @@ class Note(NoteBase):
 
 
 # --------- Password and Token Helpers ---------
+
 
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
@@ -348,3 +351,4 @@ def websocket_info():
             "This backend uses only RESTful HTTP endpoints. No WebSocket API provided."
         )
     }
+
